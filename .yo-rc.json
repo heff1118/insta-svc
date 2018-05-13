@@ -9,7 +9,7 @@
     "packageName": "com.aheffernan.instasvc",
     "packageFolder": "com/aheffernan/instasvc",
     "serverPort": "8080",
-    "authenticationType": "oauth2",
+    "authenticationType": "session",
     "cacheProvider": "ehcache",
     "enableHibernateCache": false,
     "websocket": false,
@@ -18,21 +18,29 @@
     "prodDatabaseType": "mysql",
     "searchEngine": false,
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "maven",
-    "enableSocialSignIn": false,
+    "enableSocialSignIn": true,
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "800d042f183bbbbf715ef09b418ac53ef9122cf9",
-    "enableTranslation": true,
-    "applicationType": "microservice",
-    "testFrameworks": [],
+    "rememberMeKey": "ccf728e4080c32a03b1469bee4bf32c74bfab494",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "yarn",
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "protractor"
+    ],
     "jhiPrefix": "jhi",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-spring-social-connectors",
+        "version": "0.0.1"
+      }
+    ],
+    "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ],
-    "clientPackageManager": "yarn",
-    "skipClient": true,
-    "skipUserManagement": true
+    ]
   }
 }

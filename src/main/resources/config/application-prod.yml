@@ -19,13 +19,6 @@ logging:
         com.aheffernan.instasvc: INFO
         io.github.jhipster: INFO
 
-eureka:
-    instance:
-        prefer-ip-address: true
-    client:
-        service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
-
 spring:
     devtools:
         restart:
@@ -59,12 +52,6 @@ spring:
         password:
     thymeleaf:
         cache: true
-    zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
-        base-url: http://localhost:9411
-        enabled: false
-        locator:
-            discovery:
-                enabled: true
 
 liquibase:
     contexts: prod
@@ -110,6 +97,10 @@ jhipster:
         ehcache: # Ehcache configuration
             time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
             max-entries: 1000 # Number of objects in each cache entry
+    security:
+        remember-me:
+            # security key (this key should be unique for your application, and kept secret)
+            key: ccf728e4080c32a03b1469bee4bf32c74bfab494
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: instasvc@localhost
         base-url: http://my-server-url-to-change # Modify according to your server's URL
@@ -132,9 +123,6 @@ jhipster:
             host: localhost
             port: 5000
             queue-size: 512
-        spectator-metrics: # Reports Spectator Circuit Breaker metrics in the logs
-            enabled: false
-            # edit spring.metrics.export.delay-millis to set report frequency
 
 
 # ===================================================================
